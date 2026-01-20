@@ -1,0 +1,54 @@
+.dataTables_empty {
+    text-align: center;
+    padding: 12px;
+}
+.ctm_table_footer .dt-paging > nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.ctm_table_footer .dt-paging :is(.dt-paging-button, .ellipsis) {
+    font-weight: 400;
+    font-size: 16px;
+    color: #a4a4a4;
+    cursor: pointer;
+}
+.ctm_table_footer .dt-paging .dt-paging-button:is(.first, .last) {
+    display: none;
+}
+.ctm_table_footer .dt-paging .dt-paging-button {
+    color: #a4a4a4;
+}
+.ctm_table_footer .dt-paging .dt-paging-button.current,
+.ctm_table_footer .dt-paging .dt-paging-button:not(.disabled) {
+    cursor: pointer;
+    color: #000000;
+}
+.ctm_table_footer .dt-length {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.ctm_table_footer .dt-length > label {
+    color: #a4a4a4;
+    font-weight: 400;
+    font-size: 16px;
+}
+.ctm_table_footer .dt-info {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: #a4a4a4;
+}
+.ctm_table_footer .dt-length select {
+    cursor: pointer;
+    padding: 0 26px 0 10px;
+    border-bottom: 1px solid #a4a4a4;
+    outline: none !important;
+    box-shadow: none !important;
+    appearance: none;
+    background-image: url('data:image/svg+xml,<svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.96068 6.88196L0 0H13.9214L6.96068 6.88196Z" fill="%23A4A4A4"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 90%;
+    color: #99a1af;
+}

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Modules\Users\Model\User;
 
 test('profile page is displayed', function () {
     $user = User::factory()->create();

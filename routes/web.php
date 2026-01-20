@@ -1,9 +1,21 @@
 <?php
 
+require base_path('app\Modules\Users\routes\web.php');
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+Route::get('/clear_cache', function () {
+    // Clear all caches (config, view, route, events, etc.)
+    Artisan::call('optimize:clear');
+
+    // Re-cache config and routes for better performance
+    Artisan::call('optimize');
+
+    return "Cache cleared and optimized successfully!";
+});
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -24,12 +36,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/about', function () {
-    return Inertia::render('About');
-})->middleware(['auth', 'verified'])->name('about');
-
-Route::get('/team', function () {
-    return Inertia::render('Team');
-})->middleware(['auth', 'verified'])->name('team');
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

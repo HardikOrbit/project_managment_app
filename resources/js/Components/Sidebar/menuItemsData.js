@@ -3,7 +3,6 @@ import {
     Users,
     Settings,
     Mail,
-    Calendar,
     Zap,
     MessageSquare,
     ClipboardList,
@@ -14,8 +13,7 @@ export const menuItems = [
         heading: "MAIN MENU",
         items: [
             { path: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-            { path: "/about", label: "Calendar", icon: Calendar },
-            { path: "/team", label: "Teams", icon: Users },
+            { path: "/users", label: "Users", icon: Users },
             { path: "/activity", label: "Activity", icon: Zap },
             { path: "/message", label: "Message", icon: MessageSquare },
             { path: "/report", label: "Report", icon: ClipboardList },

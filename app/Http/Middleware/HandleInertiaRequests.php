@@ -29,11 +29,23 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        return [
+        $shared = [
             ...parent::share($request),
             'auth' => [
                 'user' => $request->user(),
             ],
         ];
+
+        // Add user_can only if user is logged in
+        if ($request->user()) {
+            $shared['user_can'] = [
+                'Projectview' => user_can('Project', 'view'),
+            ];
+            $shared['user_can'] = [
+                'Userview' => user_can('User', 'view'),
+            ];
+        }
+
+        return $shared;
     }
 }
